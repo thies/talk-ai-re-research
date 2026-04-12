@@ -1,0 +1,63 @@
+/* ── Typography ─────────────────────────────────────────── */
+.reveal {
+  font-family: "Georgia", serif;
+  font-size: 22px;
+  color: #1a1a1a;
+}
+
+.reveal h1, .reveal h2, .reveal h3 {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-weight: 600;
+  color: #1a1a1a;
+  text-transform: none;
+  letter-spacing: -0.01em;
+}
+
+.reveal h2 { font-size: 1.6em; margin-bottom: 0.6em; }
+.reveal h3 { font-size: 1.2em; }
+
+.reveal p  { line-height: 1.55; margin-bottom: 0.7em; }
+.reveal ul  { margin-left: 1.2em; }
+.reveal li  { margin-bottom: 0.4em; line-height: 1.5; }
+
+/* ── Title slide ────────────────────────────────────────── */
+.reveal .slides section:first-child h2 {
+  font-size: 1.8em;
+  margin-top: 1em;
+}
+.reveal .slides section:first-child h3 {
+  font-size: 1.1em;
+  font-weight: 400;
+  color: #555;
+  margin-top: 0.4em;
+}
+p.author       { font-size: 1.05em; font-weight: 600; margin-top: 1.4em; margin-bottom: 0; }
+p.affiliation  { font-size: 0.9em; color: #555; margin: 0; }
+p.date         { font-size: 0.85em; color: #888; margin-top: 0.3em; }
+
+/* ── Figures ────────────────────────────────────────────── */
+.reveal figure {
+  margin: 0;
+  text-align: center;
+}
+.reveal figure img {
+  max-height: 560px;
+  max-width: 100%;
+  object-fit: contain;
+}
+.reveal figure figcaption {
+  font-size: 0.7em;
+  color: #666;
+  margin-top: 0.4em;
+}
+
+/* ── Accent colour (Zissou blue) ────────────────────────── */
+.reveal strong { color: #3B9AB2; font-weight: 600; }
+.reveal a      { color: #3B9AB2; }
+
+/* ── Slide number ───────────────────────────────────────── */
+.reveal .slide-number {
+  font-size: 0.65em;
+  color: #aaa;
+  background: transparent;
+}

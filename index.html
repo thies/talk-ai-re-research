@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>From Mapping a Field to Measuring the Research Space</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reset.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/theme/white.css">
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+  <!-- Title -->
+  <section>
+    <h2>From Mapping a Field to Measuring the Research Space</h2>
+    <h3>AI, Idea Generation, and Cross-Field Transfer<br>in Real Estate Finance and Economics</h3>
+    <p class="author">Thies Lindenthal</p>
+    <p class="affiliation">University of Cambridge</p>
+    <p class="date">2026</p>
+  </section>
+
+  <!-- Motivation -->
+  <section>
+    <h2>What makes a research idea good?</h2>
+    <p>Novelty is necessary but not sufficient. An idea that is technically feasible and lands in
+    an underexplored part of the research space is more likely to matter.</p>
+    <p>Can we measure this — and can AI help generate ideas that score well?</p>
+  </section>
+
+  <!-- The corpus -->
+  <section>
+    <h2>The corpus</h2>
+    <p>50+ years of <em>Real Estate Economics</em> (1,676 articles, 1973–2024) plus
+    relevant subsets of JUE, JREFE, JF, RFS, and AER.</p>
+    <p>Each paper: LLM-extracted research question, method, and key finding →
+    sentence embeddings → UMAP → research space.</p>
+  </section>
+
+  <!-- UMAP: research clusters -->
+  <section>
+    <h2>The research space</h2>
+    <figure>
+      <img src="figures/umap_research_clusters.png" alt="UMAP research clusters">
+    </figure>
+  </section>
+
+  <!-- UMAP: by corpus -->
+  <section>
+    <h2>REE vs. top journals</h2>
+    <figure>
+      <img src="figures/umap_by_corpus.png" alt="UMAP by corpus">
+    </figure>
+  </section>
+
+  <!-- UMAP: by journal -->
+  <section>
+    <figure>
+      <img src="figures/umap_by_journal.png" alt="UMAP by journal">
+    </figure>
+  </section>
+
+  <!-- Citations and distance -->
+  <section>
+    <h2>Distance from the frontier predicts citations</h2>
+    <figure>
+      <img src="figures/citations_by_cluster_position.png" alt="Citations by cluster position">
+    </figure>
+  </section>
+
+  <!-- Regression coefficients -->
+  <section>
+    <figure>
+      <img src="figures/frontier_distance_citation_coefficients.png" alt="Frontier distance coefficients">
+    </figure>
+  </section>
+
+  <!-- Reward score validation -->
+  <section>
+    <h2>Validating the reward function</h2>
+    <figure>
+      <img src="figures/reward_score_validation.png" alt="Reward score validation">
+    </figure>
+  </section>
+
+  <!-- AI idea generation -->
+  <section>
+    <h2>Three ways to prompt for ideas</h2>
+    <ul>
+      <li><strong>A — Naive:</strong> unconstrained generation</li>
+      <li><strong>B — Cluster-seeded:</strong> anchored to an underexplored cluster</li>
+      <li><strong>C — Method-transfer:</strong> top-journal method × RE cluster</li>
+    </ul>
+  </section>
+
+  <!-- Idea scores -->
+  <section>
+    <h2>Structured prompting improves idea quality</h2>
+    <figure>
+      <img src="figures/idea_scores_by_condition.png" alt="Idea scores by condition">
+    </figure>
+  </section>
+
+  <!-- Ideas in embedding space -->
+  <section>
+    <h2>Where do the ideas land?</h2>
+    <figure>
+      <img src="figures/ideas_umap_c_unconstrained.png" alt="Ideas in UMAP space — condition C">
+    </figure>
+  </section>
+
+  <!-- AI emergence -->
+  <section>
+    <h2>AI in real estate research</h2>
+    <figure>
+      <img src="figures/ai_emergence_trend.png" alt="AI emergence trend">
+    </figure>
+  </section>
+
+  <!-- Conclusions -->
+  <section>
+    <h2>Conclusions</h2>
+    <p>The research space is measurable. Distance from the frontier predicts citation impact.</p>
+    <p>AI-generated ideas can be steered toward underexplored, high-potential regions — but
+    structured prompting is what does the work.</p>
+    <p>Cross-field method transfer (condition C) produces the highest novelty and atypicality scores.</p>
+  </section>
+
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    slideNumber: 'c/t',
+    transition: 'fade',
+    backgroundTransition: 'fade',
+    controls: true,
+    progress: true,
+    center: false,
+    width: 1280,
+    height: 720,
+  });
+</script>
+</body>
+</html>
