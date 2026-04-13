@@ -16,9 +16,10 @@
 			<div class="slides">
 
 			<!-- 1. Title slide -->
-				<section>
-					<h2 style="line-height:1.15;">Has AI changed our view on real estate markets, theories and research approaches?</h2>
-					<p style="font-size:0.75em; margin:0.4em 0 0; font-weight:600;">Thies Lindenthal &nbsp;·&nbsp; University of Cambridge &nbsp;·&nbsp; 2026</p>
+				<section style="text-align:center;">
+					<h2 style="line-height:1.15; text-transform:none;">Has AI changed our view on <br> real estate markets, theories <br>and research approaches?</h2>
+					<p style="font-size:0.75em; margin:0.4em 0 0.6em; font-weight:600;">Thies Lindenthal &nbsp;·&nbsp; University of Cambridge &nbsp;·&nbsp; 2026</p>
+					<img src="imgs/claude-smiling.jpg" style="height:300px; width:auto; border-radius:8px;">
 				</section>
 
 				<!-- 2. Kobak et al. introduction -->
@@ -76,7 +77,7 @@
 				<section data-markdown>
 					<textarea data-template>
 						## Reading the regulatory universe<span class="subtitle"><br/>[Bartik, Gupta & Milo (2025)](https://doi.org/10.1257/jep.20241428): NLP on the full corpus of US planning documents</span>
-						* Better measures of planning restrictiveness</span>
+						* Better measures of planning restrictiveness
 
 						<div class='figure'>
 							<img src="imgs/planning.png" height=480>
@@ -100,10 +101,10 @@
 					<textarea data-template>
 						## Squeezing signal from noise<span class="subtitle"><br/>[Leow & Lindenthal (2025)](https://doi.org/10.1111/1540-6229.12527): ML to tease out predictability in REIT returns</span>
 
-						* ML models high-dimensional feature sets better! We can outperform traditional approaches.</span>
+						* ML models high-dimensional feature sets better! We can outperform traditional approaches.
 
 						<div class='figure'>
-							<img src="imgs/reit.png" height=480>
+							<img src="imgs/reit.png" height=400>
 						</div>
 					</textarea>
 				</section>
@@ -111,7 +112,7 @@
 				<!-- 9. Testing — Wan & Lindenthal -->
 				<section data-markdown>
 					<textarea data-template>
-						## New challenges: test AI systems<span class="subtitle"><br/>Do the AI models perform the way we need them to?<span>
+						## New challenges: test AI systems<span class="subtitle"><br/>Do the AI models perform the way we need them to? Do they cut corners?</span>
 						* [Wan & Lindenthal (2023)](https://doi.org/10.1111/1540-6229.12446): any deployed AI system must be stress-tested before used in practice (you might be discriminating and/or breaking the law/do other stupid things)
 
 						<div class='figure'>
@@ -123,7 +124,7 @@
 				<!-- 10. Radar chart — human vs AI skills -->
 				<section>
 					<h2>Moving up the value chain... <span class="subtitle"><br/>Am I still useful in the research process? Does a human competitive edge remain?</span></h2>
-					<p style="text-align:center; font-size:0.75em; color:#555; margin:0 0 0.2em;">Comparison of Core Research Competencies</p>
+					<p style="text-align:center; font-size:0.75em; color:#555; margin:0 0 0.2em;">Comparison of Core Research Competencies (my self-perception)</p>
 					<div style="display:flex; justify-content:center; align-items:center; height:490px;">
 						<canvas id="radar-chart" style="max-width:620px; max-height:490px;"></canvas>
 					</div>
@@ -144,26 +145,17 @@
 				<!-- 12. Research idea generation strategy -->
 				<section data-markdown>
 					<textarea data-template>
-						## Can AI generate good research ideas?<span class="subtitle"><br/>Eight conditions vary what context the LLM sees — from nothing to full corpus to methods borrowed from other fields</span>
+						## Can AI generate good research ideas?<span class="subtitle"><br/>Eight ways to prompt the LLM: offering context, methods, and ideas from other fields</span>
 
 						* **A — Naïve:** no context, LLM draws on training only
 						* **B — Full REE corpus:** all 1,676 abstracts provided as context
 						* **C — Cluster-seeded:** one idea per research cluster; 51 ideas
-						* **D/F — Method/paradigm transfer from Econ/Finance**
-						* **E/G — Method/paradigm transfer from Psychology**
+						* **D-G — Method/paradigm transfer:** Ideas and methods from Econ/Finance or Psychology
 						* **H — Citation-guided:** LLM steered toward high-impact territory
 
-						Each idea embedded, projected into the research space, and scored on **novelty**, **atypicality**, and **feasibility**.
-
-						---
-
-						*Example (Condition A — Naïve):*
-
-						*Idea:* How do changes in remote work accessibility affect the capitalization of neighbourhood human capital density and local labour market externalities into property values, and do these effects persist?
-
-						*Method:* Staggered diff-in-diff exploiting differential remote work adoption across firms; hedonic model with interaction between remote work share and neighbourhood skill density.
-
-						*Data:* Zillow transactions, BLS occupational employment, Burning Glass work location data.
+						<div style="margin-top:0.6em; padding:0.5em 0.8em; background:#f4f4f4; border-left:3px solid #3B9AB2; font-size:0.6em; line-height:1.5; font-family:monospace;">
+						<strong>Prompt (Condition A):</strong> "Generate 10 original real estate economics and finance research ideas. Each idea should be genuinely novel — not an incremental extension of standard hedonic or mortgage models, but a contribution that could open a new research programme. Think across the full breadth of the field: housing markets, commercial real estate, urban economics, real estate finance, mortgage markets, land use, REITs, climate risk, discrimination, neighbourhood effects, and so on."
+						</div>
 					</textarea>
 				</section>
 
@@ -185,7 +177,7 @@
 							<!-- A: fades out when B appears -->
 							<div class="fragment fade-out" data-fragment-index="0" style="text-align:center;">
 								<img src="figures/ideas_umap_a_unconstrained.png" style="width:600px; height:460px; object-fit:contain; display:block;">
-								<span style="font-size:0.6em; font-weight:600; display:block; margin-top:4px;">A: Naive generation, based on LLM training only</span>
+								<span style="font-size:0.6em; font-weight:600; display:block; margin-top:4px;">A: Naïve generation, based on LLM training only</span>
 							</div>
 
 							<!-- B -->
@@ -275,15 +267,16 @@
 						<img src="figures/predicted_citations_constrained.png" height=420>
 					</div>
 					<p style="text-align:center; font-size:0.52em; color:#444; margin:0.3em 0 0;">
-						\( \log(1 + \mathit{cit}_i) = \alpha + \beta_1\log(\mathit{age}) + \beta_2\,\mathit{atypicality} + \beta_3\,\mathit{nn\,dist} + \beta_4\log(\mathit{frontier\,dist}) + \beta_5\,\mathit{cluster\,mean\,cit} + \text{journal FE} \)<br>
-						$R^2$ = 0.182; n = 1,074; evaluated at REE baseline, age = 5
+						\( log(1 + Citations_i) = \alpha + \beta_1\log(Age_i) + \beta_2 Atypicality_i + \beta_3 NN.dist_i + \beta_4 log(frontier.dist_i) \)
+						\( + \beta_5 cluster.mean.cit_i + Journal.FE_i +\epsilon_i \)<br>
+						\(R^2 = 0.182\); \(n = 1,074\); evaluated at REE baseline, age = 5
 					</p>
 				</section>
 
 				<!-- 18. The Change is here — beheading cartoon -->
 				<section data-markdown>
 					<textarea data-template>
-						## The Change is here <span class="subtitle"><br/>The question is not IF AI will change research—only when we will realise it. </span>
+						## The Change is here<span class="subtitle"><br/>The question is not IF AI will change research—only when we will realise it.</span>
 
 						* *Progressive:* "Go on, strike away — quickly! How long am I to go on kneeling?" <br/> *Moderates:* "Why, you are already beheaded, if you would only be so kind as to nod."
 
