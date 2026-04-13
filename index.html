@@ -1,150 +1,384 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>From Mapping a Field to Measuring the Research Space</title>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reset.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/theme/white.css">
-  <link rel="stylesheet" href="css/custom.css">
-</head>
-<body>
-<div class="reveal">
-<div class="slides">
+		<title>Research in the age of AI</title>
 
-  <!-- Title -->
-  <section>
-    <h2>From Mapping a Field to Measuring the Research Space</h2>
-    <h3>AI, Idea Generation, and Cross-Field Transfer<br>in Real Estate Finance and Economics</h3>
-    <p class="author">Thies Lindenthal</p>
-    <p class="affiliation">University of Cambridge</p>
-    <p class="date">2026</p>
-  </section>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reset.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/theme/white.css">
+		<link rel="stylesheet" href="tweaks.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
 
-  <!-- Motivation -->
-  <section>
-    <h2>What makes a research idea good?</h2>
-    <p>Novelty is necessary but not sufficient. An idea that is technically feasible and lands in
-    an underexplored part of the research space is more likely to matter.</p>
-    <p>Can we measure this — and can AI help generate ideas that score well?</p>
-  </section>
+			<!-- 1. Title slide -->
+				<section>
+					<h2 style="line-height:1.15;">Has AI changed our view on real estate markets, theories and research approaches?</h2>
+					<p style="font-size:0.75em; margin:0.4em 0 0; font-weight:600;">Thies Lindenthal &nbsp;·&nbsp; University of Cambridge &nbsp;·&nbsp; 2026</p>
+				</section>
 
-  <!-- The corpus -->
-  <section>
-    <h2>The corpus</h2>
-    <p>50+ years of <em>Real Estate Economics</em> (1,676 articles, 1973–2024) plus
-    relevant subsets of JUE, JREFE, JF, RFS, and AER.</p>
-    <p>Each paper: LLM-extracted research question, method, and key finding →
-    sentence embeddings → UMAP → research space.</p>
-  </section>
+				<!-- 2. Kobak et al. introduction -->
+				<section data-markdown>
+					<textarea data-template>
+						## ChatGPT shock in academia<span class="subtitle"><br/>How much do researchers use LLMs for writing? A lot!!</span>
+						* [Kobak et al. (2025, *Science Advances*)](https://doi.org/10.1126/sciadv.adt3813): At least 13.5% of 2024 biomedical abstracts processed with LLMs — reaching 40% in some subcorpora
+						<div class='figure'>
+							<img src="imgs/kobak.jpg" height=430>
+						</div>
 
-  <!-- UMAP: research clusters -->
-  <section>
-    <h2>The research space</h2>
-    <figure>
-      <img src="figures/umap_research_clusters.png" alt="UMAP research clusters">
-    </figure>
-  </section>
+					</textarea>
+				</section>
 
-  <!-- UMAP: by corpus -->
-  <section>
-    <h2>REE vs. top journals</h2>
-    <figure>
-      <img src="figures/umap_by_corpus.png" alt="UMAP by corpus">
-    </figure>
-  </section>
+				<!-- 3. AI language in real estate abstracts -->
+				<section data-markdown>
+					<textarea data-template>
+						## ... And real estate research? <span class="subtitle"><br/>Same picture in real estate academic literature: LLMs are everywhere!</span>
 
-  <!-- UMAP: by journal -->
-  <section>
-    <figure>
-      <img src="figures/umap_by_journal.png" alt="UMAP by journal">
-    </figure>
-  </section>
+						* Replication of [Kobak et al. (2025, *Science Advances*)](https://doi.org/10.1126/sciadv.adt3813) using real estate papers
+							- ~101k OpenAlex papers tagged real estate / housing / urban economics / REITs, 2010–2025
 
-  <!-- Citations and distance -->
-  <section>
-    <h2>Distance from the frontier predicts citations</h2>
-    <figure>
-      <img src="figures/citations_by_cluster_position.png" alt="Citations by cluster position">
-    </figure>
-  </section>
+						<div class='figure'>
+							<img src="figures/kobak_openalex.png" height=440>
+						</div>
 
-  <!-- Regression coefficients -->
-  <section>
-    <figure>
-      <img src="figures/frontier_distance_citation_coefficients.png" alt="Frontier distance coefficients">
-    </figure>
-  </section>
+					</textarea>
+				</section>
 
-  <!-- Reward score validation -->
-  <section>
-    <h2>Validating the reward function</h2>
-    <figure>
-      <img src="figures/reward_score_validation.png" alt="Reward score validation">
-    </figure>
-  </section>
+				<!-- 4. AI is now indispensable -->
+				<section data-markdown>
+					<textarea data-template>
+						## More than just a clever typewriter<span class="subtitle"><br/>Publications in REE that became doable* due to advances in ML/AI</span>
 
-  <!-- AI idea generation -->
-  <section>
-    <h2>Three ways to prompt for ideas</h2>
-    <ul>
-      <li><strong>A — Naive:</strong> unconstrained generation</li>
-      <li><strong>B — Cluster-seeded:</strong> anchored to an underexplored cluster</li>
-      <li><strong>C — Method-transfer:</strong> top-journal method × RE cluster</li>
-    </ul>
-  </section>
+						<div class='figure'>
+							<img src="figures/ai_emergence_trend.png" height=480>
+						</div>
 
-  <!-- Idea scores -->
-  <section>
-    <h2>Structured prompting improves idea quality</h2>
-    <figure>
-      <img src="figures/idea_scores_by_condition.png" alt="Idea scores by condition">
-    </figure>
-  </section>
+						* *) Based on my subjective classification
+					</textarea>
+				</section>
 
-  <!-- Ideas in embedding space -->
-  <section>
-    <h2>Where do the ideas land?</h2>
-    <figure>
-      <img src="figures/ideas_umap_c_unconstrained.png" alt="Ideas in UMAP space — condition C">
-    </figure>
-  </section>
+				<!-- 5. Street View — Lindenthal & Johnson -->
+				<section data-markdown>
+					<textarea data-template>
+						## New data sources<span class="subtitle"><br/>[Lindenthal & Johnson (2021)](https://doi.org/10.1007/s11146-021-09845-1): Google Street View as a source of property-level data</span>
 
-  <!-- AI emergence -->
-  <section>
-    <h2>AI in real estate research</h2>
-    <figure>
-      <img src="figures/ai_emergence_trend.png" alt="AI emergence trend">
-    </figure>
-  </section>
+						<div class='figure'>
+							<img src="imgs/streetview.png" height=480>
+						</div>
+					</textarea>
+				</section>
 
-  <!-- Conclusions -->
-  <section>
-    <h2>Conclusions</h2>
-    <p>The research space is measurable. Distance from the frontier predicts citation impact.</p>
-    <p>AI-generated ideas can be steered toward underexplored, high-potential regions — but
-    structured prompting is what does the work.</p>
-    <p>Cross-field method transfer (condition C) produces the highest novelty and atypicality scores.</p>
-  </section>
+				<!-- 6. Planning documents — Bartik, Gupta & Milo -->
+				<section data-markdown>
+					<textarea data-template>
+						## Reading the regulatory universe<span class="subtitle"><br/>[Bartik, Gupta & Milo (2025)](https://doi.org/10.1257/jep.20241428): NLP on the full corpus of US planning documents</span>
+						* Better measures of planning restrictiveness</span>
 
-</div>
-</div>
+						<div class='figure'>
+							<img src="imgs/planning.png" height=480>
+						</div>
+					</textarea>
+				</section>
 
-<script src="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.js"></script>
-<script>
-  Reveal.initialize({
-    hash: true,
-    slideNumber: 'c/t',
-    transition: 'fade',
-    backgroundTransition: 'fade',
-    controls: true,
-    progress: true,
-    center: false,
-    width: 1280,
-    height: 720,
-  });
-</script>
-</body>
+				<!-- 7. MLS quality — Shen & Ross -->
+				<section data-markdown>
+					<textarea data-template>
+						## Better measurement from text<span class="subtitle"><br/>[Shen & Ross (2021)](https://doi.org/10.1016/j.jue.2020.103299): NLP on MLS listing descriptions to capture property quality beyond observable attributes</span>
+
+						<div class='figure'>
+							<img src="imgs/mls.png" height=480>
+						</div>
+					</textarea>
+				</section>
+
+				<!-- 8. REIT returns — Leow & Lindenthal -->
+				<section data-markdown>
+					<textarea data-template>
+						## Squeezing signal from noise<span class="subtitle"><br/>[Leow & Lindenthal (2025)](https://doi.org/10.1111/1540-6229.12527): ML to tease out predictability in REIT returns</span>
+
+						* ML models high-dimensional feature sets better! We can outperform traditional approaches.</span>
+
+						<div class='figure'>
+							<img src="imgs/reit.png" height=480>
+						</div>
+					</textarea>
+				</section>
+
+				<!-- 9. Testing — Wan & Lindenthal -->
+				<section data-markdown>
+					<textarea data-template>
+						## New challenges: test AI systems<span class="subtitle"><br/>Do the AI models perform the way we need them to?<span>
+						* [Wan & Lindenthal (2023)](https://doi.org/10.1111/1540-6229.12446): any deployed AI system must be stress-tested before used in practice (you might be discriminating and/or breaking the law/do other stupid things)
+
+						<div class='figure'>
+							<img src="imgs/testing.jpg" height=400>
+						</div>
+					</textarea>
+				</section>
+
+				<!-- 10. Radar chart — human vs AI skills -->
+				<section>
+					<h2>Moving up the value chain... <span class="subtitle"><br/>Am I still useful in the research process? Does a human competitive edge remain?</span></h2>
+					<p style="text-align:center; font-size:0.75em; color:#555; margin:0 0 0.2em;">Comparison of Core Research Competencies</p>
+					<div style="display:flex; justify-content:center; align-items:center; height:490px;">
+						<canvas id="radar-chart" style="max-width:620px; max-height:490px;"></canvas>
+					</div>
+				</section>
+
+				<!-- 11. AI as co-investigator — hard sciences -->
+				<section data-markdown>
+					<textarea data-template>
+						## AI as co-investigator<span class="subtitle"><br/>In the hard sciences, AI is already generating and testing hypotheses autonomously</span>
+
+						* **[AlphaFold2](https://doi.org/10.1038/s41586-021-03819-2)** (Jumper et al., *Nature* 2021): predicted structures for ~200 million proteins — a problem unsolved for 50 years.
+						* **[GNoME](https://doi.org/10.1038/s41586-023-06735-9)** (Merchant et al., *Nature* 2023): discovered 2.2 million stable crystal structures; 736 synthesised and experimentally validated.
+						* **[Coscientist](https://doi.org/10.1038/s41586-023-06792-0)** (Boiko et al., *Nature* 2023): autonomous agent that searched the literature, wrote code, and ran wet-lab experiments without human intervention.
+						* **[Insilico Medicine](https://doi.org/10.1038/s41591-025-03743-2)** (2025, *Nature Medicine*): AI-designed drug candidate completed Phase II clinical trial — from target identification to molecule in under 4 years.
+					</textarea>
+				</section>
+
+				<!-- 12. Research idea generation strategy -->
+				<section data-markdown>
+					<textarea data-template>
+						## Can AI generate good research ideas?<span class="subtitle"><br/>Eight conditions vary what context the LLM sees — from nothing to full corpus to methods borrowed from other fields</span>
+
+						* **A — Naïve:** no context, LLM draws on training only
+						* **B — Full REE corpus:** all 1,676 abstracts provided as context
+						* **C — Cluster-seeded:** one idea per research cluster; 51 ideas
+						* **D/F — Method/paradigm transfer from Econ/Finance**
+						* **E/G — Method/paradigm transfer from Psychology**
+						* **H — Citation-guided:** LLM steered toward high-impact territory
+
+						Each idea embedded, projected into the research space, and scored on **novelty**, **atypicality**, and **feasibility**.
+
+						---
+
+						*Example (Condition A — Naïve):*
+
+						*Idea:* How do changes in remote work accessibility affect the capitalization of neighbourhood human capital density and local labour market externalities into property values, and do these effects persist?
+
+						*Method:* Staggered diff-in-diff exploiting differential remote work adoption across firms; hedonic model with interaction between remote work share and neighbourhood skill density.
+
+						*Data:* Zillow transactions, BLS occupational employment, Burning Glass work location data.
+					</textarea>
+				</section>
+
+				<!-- 13. Topic cluster map (research space) -->
+				<section>
+					<h2>50 years of real estate research<span class="subtitle"><br/>1,676 REE articles + top-journal subsets embedded and clustered into a research space</span></h2>
+					<div class='figure' style="margin:0;">
+						<img src="figures/umap_research_clusters.png" style="height:540px; width:auto; object-fit:contain;">
+					</div>
+				</section>
+
+				<!-- 14. UMAP panels: where do generated ideas land? -->
+				<section>
+					<h2>Where do AI-generated ideas land? <span class="subtitle"><br/>Each dot is a generated idea projected into the research space</span></h2>
+					<div style="display:flex; justify-content:center; align-items:center; gap:24px;">
+
+						<div class="r-stack" style="height:500px; width:600px; flex-shrink:0;">
+
+							<!-- A: fades out when B appears -->
+							<div class="fragment fade-out" data-fragment-index="0" style="text-align:center;">
+								<img src="figures/ideas_umap_a_unconstrained.png" style="width:600px; height:460px; object-fit:contain; display:block;">
+								<span style="font-size:0.6em; font-weight:600; display:block; margin-top:4px;">A: Naive generation, based on LLM training only</span>
+							</div>
+
+							<!-- B -->
+							<div class="fragment current-visible" data-fragment-index="0" style="text-align:center;">
+								<img src="figures/ideas_umap_b_unconstrained.png" style="width:600px; height:460px; object-fit:contain; display:block;">
+								<span style="font-size:0.6em; font-weight:600; display:block; margin-top:4px;">B: Full REE corpus provided as context</span>
+							</div>
+
+							<!-- C -->
+							<div class="fragment current-visible" data-fragment-index="1" style="text-align:center;">
+								<img src="figures/ideas_umap_e_econ_unconstrained.png" style="width:600px; height:460px; object-fit:contain; display:block;">
+								<span style="font-size:0.6em; font-weight:600; display:block; margin-top:4px;">C: Transfer of research methods and ideas from Econ/Finance</span>
+							</div>
+
+							<!-- D: stays visible at end -->
+							<div class="fragment" data-fragment-index="2" style="text-align:center;">
+								<img src="figures/ideas_umap_e_psych_unconstrained.png" style="width:600px; height:460px; object-fit:contain; display:block;">
+								<span style="font-size:0.6em; font-weight:600; display:block; margin-top:4px;">D: Transfer of research methods and ideas from Psychology</span>
+							</div>
+
+						</div>
+
+						<!-- Legend -->
+						<div style="display:flex; flex-direction:column; gap:16px; font-size:0.75em; white-space:nowrap;">
+							<div style="display:flex; align-items:center; gap:10px;">
+								<svg width="14" height="14"><circle cx="7" cy="7" r="7" fill="#aaaaaa"/></svg>
+								<span>Universe, all journals</span>
+							</div>
+							<div style="display:flex; align-items:center; gap:10px;">
+								<svg width="14" height="14"><circle cx="7" cy="7" r="7" fill="#3B9AB2"/></svg>
+								<span>REE</span>
+							</div>
+							<div style="display:flex; align-items:center; gap:10px;">
+								<svg width="14" height="14"><circle cx="7" cy="7" r="7" fill="#F21A00"/></svg>
+								<span>Generated ideas</span>
+							</div>
+						</div>
+
+					</div>
+				</section>
+
+				<!-- 15. Scoring dimensions: novelty, atypicality, feasibility -->
+				<section data-markdown>
+					<textarea data-template>
+						## Scoring generated ideas<span class="subtitle"><br/>Three dimensions, each computed from sentence embeddings or LLM judgement</span>
+
+						* **Novelty** — nearest-neighbour distance to all existing papers in the corpus. High novelty means the research question and approach are unlike anything published before.
+
+						* **Atypicality** — how unusual the *combination* of topic cluster and method is, relative to what typically appears together. Atypical work pairs a standard question with a rare method, or vice versa.
+
+						* **Feasibility** — can this idea plausibly be executed? Scored by the LLM against data availability, methodological maturity, and scope.
+					</textarea>
+				</section>
+
+				<!-- 16. Table: idea scores by condition (unconstrained) -->
+				<section>
+					<h2>Comparing generated research ideas<span class="subtitle"><br/>Unconstrained variant (a); 100 ideas per condition except C (51, one per cluster)</span></h2>
+					<table style="font-size:0.58em; width:100%; border-collapse:collapse; margin-top:0.4em;">
+						<thead>
+							<tr style="border-bottom:2px solid #333;">
+								<th style="text-align:left; padding:4px 6px;">Condition</th>
+								<th style="text-align:right; padding:4px 6px;">Clusters</th>
+								<th style="text-align:right; padding:4px 6px;">HHI</th>
+								<th style="text-align:center; padding:4px 6px;">Atypicality</th>
+								<th style="text-align:right; padding:4px 6px;">Periph./REE</th>
+								<th style="text-align:right; padding:4px 6px;">NN dist./REE</th>
+								<th style="text-align:right; padding:4px 6px;">Pred. cit.</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr><td style="padding:4px 6px;">A — Naïve</td><td style="text-align:right;">21 / 51</td><td style="text-align:right;">0.070</td><td style="text-align:center;">0.726 ± 0.180</td><td style="text-align:right;">3.16</td><td style="text-align:right;">2.57</td><td style="text-align:right;">11.9</td></tr>
+							<tr style="background:#f7f7f7;"><td style="padding:4px 6px;">B — Full REE corpus</td><td style="text-align:right;">23 / 51</td><td style="text-align:right;">0.074</td><td style="text-align:center;">0.707 ± 0.248</td><td style="text-align:right;">2.75</td><td style="text-align:right;">2.48</td><td style="text-align:right;">11.9</td></tr>
+							<tr><td style="padding:4px 6px;">C — Cluster-seeded</td><td style="text-align:right;">31 / 51</td><td style="text-align:right;">0.043</td><td style="text-align:center;">0.720 ± 0.206</td><td style="text-align:right;">2.89</td><td style="text-align:right;">2.48</td><td style="text-align:right;">11.5</td></tr>
+							<tr style="background:#f7f7f7;"><td style="padding:4px 6px;">D — Method transfer (econ/fin)</td><td style="text-align:right;">25 / 51</td><td style="text-align:right;">0.089</td><td style="text-align:center;">0.735 ± 0.147</td><td style="text-align:right;">3.70</td><td style="text-align:right;">2.19</td><td style="text-align:right; font-weight:bold;">13.4</td></tr>
+							<tr><td style="padding:4px 6px;">E — Method transfer (psych)</td><td style="text-align:right;">21 / 51</td><td style="text-align:right;">0.112</td><td style="text-align:center;">0.693 ± 0.210</td><td style="text-align:right;">1.85</td><td style="text-align:right;">2.70</td><td style="text-align:right;">11.2</td></tr>
+							<tr style="background:#f7f7f7;"><td style="padding:4px 6px;">F — Paradigm transfer (econ/fin)</td><td style="text-align:right;">23 / 51</td><td style="text-align:right;">0.080</td><td style="text-align:center;">0.735 ± 0.158</td><td style="text-align:right;">4.36</td><td style="text-align:right;">2.21</td><td style="text-align:right; font-weight:bold;">13.1</td></tr>
+							<tr><td style="padding:4px 6px;">G — Paradigm transfer (psych)</td><td style="text-align:right;">15 / 51</td><td style="text-align:right;">0.161</td><td style="text-align:center;">0.632 ± 0.251</td><td style="text-align:right;">1.74</td><td style="text-align:right;">2.67</td><td style="text-align:right;">11.2</td></tr>
+							<tr style="background:#f7f7f7;"><td style="padding:4px 6px;">H — Citation-guided</td><td style="text-align:right;">27 / 51</td><td style="text-align:right;">0.066</td><td style="text-align:center;">0.729 ± 0.179</td><td style="text-align:right;">2.80</td><td style="text-align:right;">2.36</td><td style="text-align:right;">12.5</td></tr>
+						</tbody>
+					</table>
+				</section>
+
+				<!-- 17. Predicted citations by condition (constrained) -->
+				<section>
+					<h2>Predicting impact of ideas<span class="subtitle"><br/>Predicted 5-year citations by generation condition — constrained variant</span></h2>
+					<div class='figure'>
+						<img src="figures/predicted_citations_constrained.png" height=420>
+					</div>
+					<p style="text-align:center; font-size:0.52em; color:#444; margin:0.3em 0 0;">
+						\( \log(1 + \mathit{cit}_i) = \alpha + \beta_1\log(\mathit{age}) + \beta_2\,\mathit{atypicality} + \beta_3\,\mathit{nn\,dist} + \beta_4\log(\mathit{frontier\,dist}) + \beta_5\,\mathit{cluster\,mean\,cit} + \text{journal FE} \)<br>
+						$R^2$ = 0.182; n = 1,074; evaluated at REE baseline, age = 5
+					</p>
+				</section>
+
+				<!-- 18. The Change is here — beheading cartoon -->
+				<section data-markdown>
+					<textarea data-template>
+						## The Change is here <span class="subtitle"><br/>The question is not IF AI will change research—only when we will realise it. </span>
+
+						* *Progressive:* "Go on, strike away — quickly! How long am I to go on kneeling?" <br/> *Moderates:* "Why, you are already beheaded, if you would only be so kind as to nod."
+
+						<div class='figure'>
+							<img src="imgs/beheading.png" height=350>
+
+						<span class="source"> Source: ["Spanische Geschichte", Fliegende Bl&auml;tter (1845)](https://de.wikisource.org/wiki/Spanische_Geschichte)</span>
+						</div>
+					</textarea>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/markdown/markdown.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/notes/notes.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/highlight/highlight.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/math/math.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
+		<script>
+			Reveal.initialize({
+				transition: "none",
+				width: 1244,
+				height: 700,
+				margin: 0.1,
+				hash: true,
+				math: { mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js' },
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath ]
+			});
+
+			// Radar chart: human vs AI research skills
+			Reveal.on('ready', function() {
+				const ctx = document.getElementById('radar-chart');
+				if (!ctx) return;
+				new Chart(ctx, {
+					type: 'radar',
+					data: {
+						labels: [
+							'Literature',
+							'Theory',
+							'Empirics',
+							'Getting Things Done',
+							'Quality Control',
+							'Innovation'
+						],
+						datasets: [
+							{
+								label: 'AI',
+								data: [9, 8, 9, 8, 4, 4],
+								backgroundColor: 'rgba(59, 154, 178, 0.2)',
+								borderColor: '#3B9AB2',
+								borderWidth: 2.5,
+								pointBackgroundColor: '#3B9AB2',
+								pointRadius: 4,
+							},
+							{
+								label: 'Thies',
+								data: [6, 7, 7, 6, 9, 9],
+								backgroundColor: 'rgba(242, 26, 0, 0.15)',
+								borderColor: '#F21A00',
+								borderWidth: 2.5,
+								pointBackgroundColor: '#F21A00',
+								pointRadius: 4,
+							}
+						]
+					},
+					options: {
+						responsive: true,
+						maintainAspectRatio: true,
+						scales: {
+							r: {
+								min: 0,
+								max: 10,
+								ticks: {
+									stepSize: 2,
+									font: { size: 13 },
+									backdropColor: 'transparent',
+								},
+								pointLabels: {
+									font: { size: 16 },
+								},
+								grid: { color: '#ddd' },
+								angleLines: { color: '#ddd' },
+							}
+						},
+						plugins: {
+							legend: {
+								position: 'bottom',
+								labels: { font: { size: 15 }, boxWidth: 18 }
+							}
+						}
+					}
+				});
+			});
+		</script>
+	</body>
 </html>
