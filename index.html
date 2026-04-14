@@ -20,7 +20,9 @@
 					<h2 style="line-height:1.15; text-transform:none;">Has AI changed our view on <br> real estate markets, theories <br>and research approaches?</h2>
 					<p style="font-size:0.75em; margin:0.4em 0 0.6em; font-weight:600;">Thies Lindenthal &nbsp;·&nbsp; University of Cambridge &nbsp;·&nbsp; 2026</p>
 					<div style="display:flex; justify-content:center; align-items:center; gap:2em; margin-top:0.5em;">
-						<img src="imgs/claude-smiling.jpg" style="height:300px; width:auto; border-radius:8px;">
+						<div style="text-align:center;">
+							<img src="imgs/claude-smiling.jpg" style="height:300px; width:auto; border-radius:8px;">
+						</div>
 						<div style="text-align:center;">
 							<img src="imgs/qr_slides.png" style="height:200px; width:auto;">
 							<p style="font-size:0.45em; margin:0.3em 0 0; color:#555;"><a href="https://www.lindenthal.eu/talks/talk-ai-re-research">lindenthal.eu/talks/talk-ai-re-research</a></p>
@@ -227,6 +229,34 @@
 					</div>
 				</section>
 
+
+				<!-- 17b. Outlier idea: algorithmic landlord pricing -->
+				<section data-markdown>
+					<textarea data-template>
+						## Idea example—promising<span class="subtitle"><br/>Generated from the full REE corpus — lands far from any existing paper</span>
+
+
+						* **Research Question:** AI landlords and market volatility — Do algorithmic rent-setting models adopted by institutional landlords amplify or dampen cyclical volatility in single-family rental markets?
+						* **Method:** Event study on staggered adoption of AI pricing algorithms by major SFR operators (Invitation Homes, Starwood, American Homes 4 Rent); IV using rollout dates, outcomes: rent volatility and price-to-rent ratios
+						* **Data:** CoStar/Zillow SFR listings; SEC filings for algorithm adoption dates; FHFA repeat-sales indices; tenant complaint records
+						* **Expected finding:** Earlier algorithmic penetration → 15–25% higher rent volatility; effects concentrated in markets with >10% institutional ownership
+						* **Nearest paper:** *"The Long-Run Relationship Between House Prices and Rents"*
+					</textarea>
+				</section>
+
+				<!-- 17c. Outlier idea: boring tax capitalization -->
+				<section data-markdown>
+					<textarea data-template>
+						## Idea example—less exciting<span class="subtitle"><br/>Generated naïvely — lands squarely on top of a 1998 paper</span>
+
+
+						* **Research Question:** Does the spatial structure of property tax capitalization differ systematically between assessed-value and market-value taxation jurisdictions, and does this create persistent mispricing opportunities exploitable by sophisticated investors?
+						* **Method:** DiD exploiting staggered reassessment cycles and tax base reforms; ML prediction of "correct" capitalization rates to identify deviations
+						* **Data:** Zillow/CoreLogic transactions matched to county assessor records across 200+ US counties (1990–2024); investor-level clustering to detect systematic exploitation
+						* **Expected finding:** Assessed-value systems create 5–25% mispricing windows persisting 2–5 years post-reassessment
+						* **Nearest paper:** *"Infrequent Assessments Distort Property Taxes: Theory and Evidence"* (1998)
+					</textarea>
+				</section>
 				<!-- 15. Scoring dimensions: novelty, atypicality, feasibility -->
 				<section data-markdown>
 					<textarea data-template>
